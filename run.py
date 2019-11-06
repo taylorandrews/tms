@@ -55,13 +55,17 @@ def v1():
 
 if __name__ == '__main__':
 
-    filepath =  '/Users/taylorandrews/Documents/projects/coding-business/tms/new_data/MRS_010/iSP Trials/iSP_LL_LH_Filt.csv'
-    df = pd.read_csv(filepath, header=14, names=names, engine='python')
+    # filepath =  '/Users/taylorandrews/Documents/projects/coding-business/tms/new_data/MRS_010/iSP Trials/iSP_LL_LH_Filt.csv'
+    fp_marked =  '../data/001/MEP_LL_1_filt.csv'
+    fp_pure =  '../data/001/MEP_LL_1_filt_original.csv'
+    names = ['time', 'CH1', 'CH2', 'CH3', 'CH4']
+    df_marked = pd.read_csv(fp_marked, header=14, names=names, engine='python')
+    df_pure = pd.read_csv(fp_pure, header=14, names=names, engine='python')
 
 
 
 
     import matplotlib.pyplot as plt
-    plt.plot([1, 2, 3, 4])
-    plt.ylabel('some numbers')
+    plt.plot(df_marked['CH1'])
+    plt.plot(df_pure['CH1'])
     plt.show()
